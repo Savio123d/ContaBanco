@@ -1,15 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        ContaTerminal conta1 = new ContaTerminal();
+
+        System.out.println("Informe o número da conta (ex: 1021): ");
+        conta1.setConta(scanner.nextInt());
+
+        System.out.println("Informe a agência (ex: 067-8): ");
+        conta1.setAgencia(scanner.next());
+
+        System.out.println("Informe o nome: ");
+        scanner.nextLine(); // Consumir quebra de linha pendente
+        conta1.setNome(scanner.nextLine());
+
+        System.out.println("Informe o saldo (use ponto para decimais, ex: 237.48): ");
+        conta1.setSaldo(scanner.nextDouble()); // <- Sem conversão, direto como double
+
+        conta1.exibir();
     }
 }
