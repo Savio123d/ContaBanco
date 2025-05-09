@@ -13,11 +13,11 @@ public class Main {
         conta1.setAgencia(scanner.next());
 
         System.out.println("Informe o nome: ");
-        scanner.nextLine(); // Consumir quebra de linha pendente
+        scanner.nextLine();
         conta1.setNome(scanner.nextLine());
 
         System.out.println("Informe o saldo (use ponto para decimais, ex: 237.48): ");
-        conta1.setSaldo(scanner.nextDouble()); // <- Sem conversão, direto como double
+        conta1.setSaldo(scanner.nextDouble());
 
         conta1.exibir();
     }
